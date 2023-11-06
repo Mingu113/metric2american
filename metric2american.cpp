@@ -4,7 +4,7 @@
 The program will take the argurment when called from the CLI, turn it into number
 and convert it into object lengths that are familiar to American (or so I have heard)
 */
-enum length
+enum length // in mm
 {
 	km = 1000000, // 1km
 	m = 1000,	  // 1m
@@ -16,9 +16,9 @@ std::string length_str(int val)
 	switch (val)
 	{
 	case length::km:
-		return " American football field end to end"; // https://measuringly.com/how-long-is-1-km/
+		return " American football field end to end"; // https://measuringly.com/how-long-is-1-km/, 11 of them
 	case length::m:
-		return " M16A4"; // https://en.wikipedia.org/wiki/M16_rifle
+		return " M16A4"; // https://en.wikipedia.org/wiki/M16_rifle, M16A4 is 1000mm
 	case length::cm:
 		return " standard 1/4 US staple"; // https://dimensionofstuff.com/9-things-that-are-about-1-centimeter-cm-long/
 	default:
