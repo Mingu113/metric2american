@@ -35,7 +35,7 @@ int convert(long long int input)
 	{
 		return 0;
 	}
-	
+
 	// turn it into km, m and cm. could be better but I don't know better.
 	// I tried to devide it but it's bugged and I'm sleepy
 	while (number > 0)
