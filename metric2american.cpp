@@ -26,13 +26,18 @@ std::string length_str(int val)
 	}
 }
 
-void convert(long long input)
+int convert(long long int input)
 {
-	int km = 0, m = 0, cm = 0;
+	unsigned long int km = 0, m = 0, cm = 0;
 	// because the input are in cm
-	int number = input * 10;
+	unsigned long long int number = input * 10;
+	if (number <= 0)
+	{
+		return 0;
+	}
+	
 	// turn it into km, m and cm. could be better but I don't know better.
-	// I tried devide it but it's bugged and I'm sleepy
+	// I tried to devide it but it's bugged and I'm sleepy
 	while (number > 0)
 	{
 		if (number >= length::km)
@@ -69,22 +74,25 @@ void convert(long long input)
 	{
 		std::cout << cm << length_str(length::cm);
 	}
+	return 0;
 }
 
 int main(int argc, char *argv[])
 {
 	if (argc > 2)
 	{
+		// multiple arguments in one call
 		for (int i = 1; i < argc; i++)
 		{
-			convert(atoll(argv[i]));
+			convert(strtoull(argv[i], nullptr, 0));
 			std::cout << "\n";
 		}
 	}
 	else if (argc < 2)
 	{
+		// one argument, input required
 		std::cout << "Input the number (in cm): ";
-		int number;
+		long long int number;
 		std::cin >> number;
 		convert(number);
 	}
